@@ -1,0 +1,9 @@
+{
+  "output_file": "settings.json",
+  "userCoolDown": {
+    "type": "numberBox",
+	"value": 60,
+	"label": "User Command Cooldown",
+	"tooltip": "The Number of seconds between each run of the command."
+  }	
+}
