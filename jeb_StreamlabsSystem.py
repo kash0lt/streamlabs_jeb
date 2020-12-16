@@ -17,7 +17,7 @@ def Init():
     global settings
     work_dir = os.path.dirname(__file__)
     with codecs.open(os.path.join(work_dir, "settings.json"), encoding='utf-8-sig') as json_file:
-        settings = json.load(json_file, encodings='utf-8-sig')
+        settings = json.load(json_file, encoding='utf-8-sig')
     return
 
 
@@ -25,9 +25,8 @@ def Execute(data):
     if data.GetParam(0) != Command or Parent.IsOnUserCooldown(ScriptName, Command, data.User):
         return
     whodis = data.UserName
-    log(whodis)
     send_message("Alright, the result for " + whodis + " is that you are " + str(Amount_Kerbalness()) + "% kerbal.")
-    if whodis != "Padre_san":
+    if whodis != "Padre_San":
         Parent.AddUserCooldown(ScriptName, Command, whodis, settings["userCoolDown"])
     return
 
