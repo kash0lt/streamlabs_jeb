@@ -6,7 +6,7 @@ import codecs
 ScriptName = "Jeb"
 Website = "https://github.com/kash0lt/streamlabs_jeb"
 Description = "Jeb - the judge of kerbalness."
-Creator = "Padre_san"
+Creator = "Padre_San"
 Version = "1.0.1"
 Command = "!jeb"
 
@@ -26,7 +26,7 @@ def Execute(data):
         return
     whodis = data.UserName
     send_message("Alright, the result for " + whodis + " is that you are " + str(Amount_Kerbalness()) + "% kerbal.")
-    if whodis != "Padre_San":
+    if whodis != Creator:
         Parent.AddUserCooldown(ScriptName, Command, whodis, settings["userCoolDown"])
     return
 
