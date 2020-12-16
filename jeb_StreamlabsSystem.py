@@ -25,7 +25,7 @@ def Execute(data):
     if data.GetParam(0) != Command or Parent.IsOnUserCooldown(ScriptName, Command, data.User):
         return
     whodis = data.UserName
-    send_message("Alright, the result for " + whodis + " is that you are " + str(Amount_Kerbalness()) + "% kerbal.")
+    send_message("Alright, " + whodis + ", your analysis shows that you are " + str(Amount_Kerbalness()) + "% kerbal.")
     if whodis != Creator:
         Parent.AddUserCooldown(ScriptName, Command, whodis, settings["userCoolDown"])
     return
