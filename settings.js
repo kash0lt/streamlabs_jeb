@@ -1,1 +1,3 @@
-﻿var settings = {};
+﻿var settings = {
+  "userCoolDown": 60
+};
