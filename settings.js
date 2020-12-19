@@ -1,3 +1,3 @@
 ﻿var settings = {
-  "userCoolDown": 60
+  "userCoolDown": 120
 };
