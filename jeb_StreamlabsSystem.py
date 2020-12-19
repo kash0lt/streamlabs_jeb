@@ -10,7 +10,7 @@ ScriptName = "Jeb"
 Website = "https://github.com/kash0lt/streamlabs_jeb"
 Description = "Jeb - the judge of kerbalness."
 Creator = "Padre_San"
-Version = "1.0.3"
+Version = "1.0.4"
 Command = "!jeb"
 
 settings = {}
@@ -25,7 +25,10 @@ def Init():
 
 
 def Execute(data):
-    if data.GetParam(0) != Command or Parent.IsOnUserCooldown(ScriptName, Command, data.User):
+    if data.GetParam(0) != Command:
+        return
+    if (Parent.IsOnUserCooldown(ScriptName, Command, data.UserName)
+            or (Parent.HasPermission(data.UserName, settings["userPermission"], info="") == False)):
         return
     whodis = data.UserName
     msg = "Alright, " + whodis + ", your analysis shows that you are " + str(Amount_Kerbalness()) + "% kerbal."

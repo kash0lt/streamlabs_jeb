@@ -5,5 +5,17 @@
 	"value": 60,
 	"label": "User Command Cooldown",
 	"tooltip": "The Number of seconds between each run of the command."
-  }	
+  },
+   "userPermission" : {
+	   "type": "dropdown",
+	   "label": "Permission",
+	   "value": "Everyone",
+	   "tooltip": "Permission to use the command",
+	   "items": [
+		  "Everyone",
+		  "Regular",
+		  "Moderator",
+		  "Streamer"
+	   ]
+   }  
 }
