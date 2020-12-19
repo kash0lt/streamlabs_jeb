@@ -5,7 +5,7 @@ import json
 import os
 import codecs
 
-# this should work ouyt to be a jeb command in Streamlabs Chatbot
+# this should work out to be a jeb command in Streamlabs Chatbot
 ScriptName = "Jeb"
 Website = "https://github.com/kash0lt/streamlabs_jeb"
 Description = "Jeb - the judge of kerbalness."
@@ -30,7 +30,6 @@ def Execute(data):
     whodis = data.UserName
     msg = "Alright, " + whodis + ", your analysis shows that you are " + str(Amount_Kerbalness()) + "% kerbal."
     send_message(msg)
-    Parent.SendDiscordMessage("bang jeb command: " + msg)
     if whodis != Creator:
         Parent.AddUserCooldown(ScriptName, Command, whodis, settings["userCoolDown"])
     return
@@ -42,6 +41,7 @@ def Tick():
 
 def send_message(message):
     Parent.SendStreamMessage(message)
+    Parent.SendDiscordMessage("The !jeb command: " + message)
     return
 
 
