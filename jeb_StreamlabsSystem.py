@@ -28,7 +28,7 @@ def Execute(data):
     if data.GetParam(0) != Command:
         return
     if (Parent.IsOnUserCooldown(ScriptName, Command, data.UserName)
-            or (Parent.HasPermission(data.UserName, settings["userPermission"], info="") == False)):
+            or (Parent.HasPermission(data.UserName, settings["userPermission"], info="") is False)):
         return
     whodis = data.UserName
     msg = "Alright, " + whodis + ", your analysis shows that you are " + str(Amount_Kerbalness()) + "% kerbal."
