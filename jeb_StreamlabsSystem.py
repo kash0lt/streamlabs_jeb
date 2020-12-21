@@ -11,7 +11,7 @@ Website = "https://github.com/kash0lt/streamlabs_jeb"
 Description = "Jeb - the judge of kerbalness."
 Creator = "Padre_San"
 Version = "1.0.4"
-Command = "!jeb"
+Command = "!kerbalness"
 
 settings = {}
 
@@ -31,7 +31,7 @@ def Execute(data):
             or (Parent.HasPermission(data.UserName, settings["userPermission"], info="") is False)):
         return
     whodis = data.UserName
-    msg = "Alright, " + whodis + ", your analysis shows that you are " + str(Amount_Kerbalness()) + "% kerbal."
+    msg = "Alright, Jeb says that " + whodis + " is likely " + str(Amount_Kerbalness()) + "% kerbal."
     send_message(msg)
     if whodis != Creator:
         Parent.AddUserCooldown(ScriptName, Command, whodis, settings["userCoolDown"])
@@ -44,7 +44,7 @@ def Tick():
 
 def send_message(message):
     Parent.SendStreamMessage(message)
-    Parent.SendDiscordMessage("The !jeb command: " + message)
+    Parent.SendDiscordMessage("The " + Command + " command: " + message)
     return
 
 
